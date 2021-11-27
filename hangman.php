@@ -39,15 +39,16 @@ if (is_word_guessed($secretWord, $lettersGuessed)) {
 } else {
     echo 'Perdiste' . PHP_EOL;
 }
-function is_word_guessed($secretWord, $lettersGuessed) {
+
+function is_word_guessed(string $secretWord, array $lettersGuessed): bool {
     return $secretWord === get_guessed_word($secretWord, $lettersGuessed);
 }
 
-function str_split_unicode($str) {
+function str_split_unicode(string $str): array {
     return preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY);
 }
 
-function get_guessed_word($secretWord, $lettersGuessed) {
+function get_guessed_word(string $secretWord, array $lettersGuessed): string {
     
     $letters = str_split_unicode($secretWord);
     $guessedWord = '';
