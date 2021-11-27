@@ -8,7 +8,7 @@ if ($argc !== 2) {
 $secretWord = $argv[1];
 
 echo 'Bienvenido al juego del ahorcado.' . PHP_EOL;
-echo 'La palabra tiene ' . mb_strlen($secretWord) . ' letras' . PHP_EOL;
+echo 'La palabra tiene ' . mb_strlen($secretWord) . ' letras.' . PHP_EOL;
 
 const MAX_ATTEMPS = 10;
 
@@ -32,8 +32,16 @@ do {
 
     $attemps++;
 
-} while($attemps < MAX_ATTEMPS);
+} while($attemps < MAX_ATTEMPS && !is_word_guessed($secretWord, $lettersGuessed));
 
+if (is_word_guessed($secretWord, $lettersGuessed)) {
+    echo 'Ganaste' . PHP_EOL;
+} else {
+    echo 'Perdiste' . PHP_EOL;
+}
+function is_word_guessed($secretWord, $lettersGuessed) {
+    return $secretWord === get_guessed_word($secretWord, $lettersGuessed);
+}
 
 function str_split_unicode($str) {
     return preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY);
