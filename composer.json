@@ -1,0 +1,14 @@
+{
+    "name": "jomgarciaro/hangman",
+    "description": "Juego del ahorcado",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hangman\\": "src/"
+        }
+    }
+}
