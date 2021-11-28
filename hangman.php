@@ -2,7 +2,7 @@
 
 include_once('vendor/autoload.php');
 
-use Hangman\Game;
+use App\Hangman\Game;
 
 if ($argc !== 2) {
     echo 'Número incorrecto de parámetros';

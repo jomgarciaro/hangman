@@ -1,6 +1,6 @@
 <?php
 
-namespace Hangman;
+namespace App\Hangman;
 
 class StringHelper
 {
